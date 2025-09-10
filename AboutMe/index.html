@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Me</title>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <style>
+        .animate-row {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-row.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const rows = document.querySelectorAll('table tr, table th');
+            rows.forEach((row, i) => {
+                row.classList.add('animate-row');
+                setTimeout(() => {
+                    row.classList.add('visible');
+                }, 300 + i * 300);
+            });
+        });
+    </script>
+</head>
+
+<body style="margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Open Sans', sans-serif; color: rgb(61, 75, 68);">
+    <table style="width: 100%; border-collapse: collapse; text-align: center;">
+        <th
+            style=" text-align: center; background: linear-gradient(to bottom, rgb(44, 44, 44), grey, rgb(255, 255, 255)); margin: 0; padding: 2%; top: 0;">
+            <h1 style="margin: 0; padding: 0;">About Me</h1>
+        </th>
+        <tr style="width: 100%; text-align: center;">
+            <td>
+                <p>My name is Michael Kielbasinski</p>
+            </td>
+        </tr>
+        <tr style="width: 100%; text-align: center;">
+            <td>
+                <p>I am a student at Grafton high school studying Computer Science</p>
+            </td>
+        </tr>
+        <tr style="width: 100%; text-align: center;">
+            <td>
+                <p>I am interested in programming and web development</p>
+                <hr>
+            </td>
+        </tr>
+        <th style=" text-align: center; ">
+            <b>My Languages</b>
+        </th>
+
+        <tr style="text-align: center;">
+            <td>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                    style="width: 5%" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+                    style="width: 5%" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+                    style="width: 5%" />
+            </td>
+        </tr>
+        <tr style="text-align: center;">
+            <td>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                    style="width: 5%" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                    style="width: 5%" />
+            </td>
+        </tr>
+        <tr style="text-align: center;">
+            <td>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                    style="width: 5%" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                    style="width: 5%" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                    style="width: 5%" />
+            </td>
+        </tr>
+        <tr style="text-align: center;">
+            <td>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+                    style="width: 5%" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                    style="width: 5%" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                    style="width: 5%" />
+                <hr>
+        </tr>
+        <th>
+            <b>My Links</b>
+        </th>
+        <tr style="text-align: center; background: linear-gradient(to bottom, rgb(255, 255, 255), grey, rgb(44, 44, 44));">
+            <td>
+                <a href="https://github.com/MinikielbyM/" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                        style="width: 5%" />
+                </a>
+                <a href="https://stackoverflow.com/users/30772925/avocadocat" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/stackoverflow/stackoverflow-original.svg"
+                        style="width: 5%" />
+                </a>
+            </td>
+            
+        </tr>
+    </table>
+</body>
+
+</html>
