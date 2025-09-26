@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+        }
+        table {
+            width: 70%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 18px 24px;
+            text-align: left;
+        }
+        th {
+            background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
+            color: #fff;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #2193b0;
+        }
+        tr:nth-child(even) td {
+            background: #f7fbfc;
+        }
+        tr:hover td {
+            background: #e3f2fd;
+            transition: background 0.3s;
+        }
+        img {
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(33,147,176,0.15);
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Country/State</th>
+            <th>City</th>
+            <th>Image</th>
+        </tr>
+        <tr>
+            <td>California</td>
+            <td>Los Angeles</td>
+            <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Los_Angeles_with_Mount_Baldy.jpg/330px-Los_Angeles_with_Mount_Baldy.jpg"></td>
+        </tr>
+        <tr>
+            <td>Texas</td>
+            <td>Houston</td>
+            <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Downtown_Houston%2C_TX_Skyline_-_2018.jpg/330px-Downtown_Houston%2C_TX_Skyline_-_2018.jpg"></td>
+        </tr>
+        <tr>
+            <td>Florida</td>
+            <td>Miami</td>
+            <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Miami_Sunset_%2845863661094%29.jpg/330px-Miami_Sunset_%2845863661094%29.jpg"></td>
+        </tr>
+        <tr>
+            <td>New York</td>
+            <td>New York City</td>
+            <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/330px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg"></td>
+        </tr>
+        <tr>
+            <td>Illinois</td>
+            <td>Chicago</td>
+            <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Chicago_Skyline_in_April_2024.jpg/330px-Chicago_Skyline_in_April_2024.jpg"></td>
+        </tr>
+    </table>
+</body>
+</html>
