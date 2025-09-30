@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="generator" content="Astro v5.13.2" />
+  <title>Michael Kielbasinski</title>
+
+  <script src="./assets/js/color-modes.js"></script>
+  <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta name="theme-color" content="#712cf9" />
+  <link href="home.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(45deg, #ff7e5f, #feb47b, #e06c4f, #43cea2, #185a9d, #ff512f, #dd2476, #1e3c72, #1a2980, #26d0ce, #feb47b, #ff7e5f);
+      background-size: 400% 400%;
+      animation: gradientShift 100s ease-in-out infinite;
+      margin: 0;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    #know-more {
+      color: white;
+      border: 2px solid white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    #know-more:hover {
+      background-color: var(--averageBg);
+    }
+  </style>
+</head>
+
+<body class="d-flex h-100 text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <nav class="nav nav-masthead justify-content-center float-md-start">
+          <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Projects</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">About Me</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main class="px-3">
+      <h1>Michael Kielbasinski</h1>
+      <p class="lead">
+        Welcome to my portfolio website! I'm Michael Kielbasinski, a passionate developer and tech enthusiast.
+      </p>
+      <p class="lead">
+        <a href="#" class="btn btn-lg btn fw-bold border-white" id="know-more">Would You Like to Know More?</a>
+      </p>
+    </main>
+    <footer class="mt-auto text-white-50">
+      <p>&copy; 2025 Michael Kielbasinski. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    const stops = [
+      "#ff7e5f", "#feb47b", "#e06c4f", "#43cea2", "#185a9d",
+      "#ff512f", "#dd2476", "#1e3c72", "#1a2980", "#26d0ce",
+      "#feb47b", "#ff7e5f"
+    ];
+    const duration = 100000; // 100s = animation duration
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function hexToRgb(hex) {
+      const n = parseInt(hex.slice(1), 16);
+      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+    }
+    function rgbToHex([r, g, b]) {
+      return "#" + [r, g, b].map(x => x.toString(16).padStart(2, "0")).join("");
+    }
+
+    function updateOverlay() {
+      const now = performance.now() % duration;
+      const progress = now / duration * (stops.length - 1);
+      const idx = Math.floor(progress);
+      const t = progress - idx;
+
+      const c1 = hexToRgb(stops[idx]);
+      const c2 = hexToRgb(stops[idx + 1]);
+      const blended = [
+        Math.round(lerp(c1[0], c2[0], t)),
+        Math.round(lerp(c1[1], c2[1], t)),
+        Math.round(lerp(c1[2], c2[2], t))
+      ];
+
+      document.getElementById("know-more").style.setProperty('--averageBg', rgbToHex(blended));
+      requestAnimationFrame(updateOverlay);
+    }
+    updateOverlay();
+  </script>
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
