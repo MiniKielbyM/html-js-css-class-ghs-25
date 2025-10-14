@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <title>Atlas Restaurant Menu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar sticky-top bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Atlas Restaurant
+            </a>
+            <div class="d-flex">
+                <a class="me-3 nav-link" href="./menu.html">Menu</a>
+                <a class="me-3 nav-link" href="./reservation.html">Make a Reservation</a>
+            </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="mb-4 text-center">Menu</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="mt-4">Appetizers</h2>
+                <ul id="apps" class="list-group mb-4"></ul>
+                <h2 class="mt-4">Vegetarian</h2>
+                <ul id="vegetarian" class="list-group mb-4"></ul>
+            </div>
+            <div class="col-md-4">
+                <h2 class="mt-4">Sides</h2>
+                <ul id="sides" class="list-group mb-4"></ul>
+            </div>
+            <div class="col-md-4">
+                <h2 class="mt-4">Desserts</h2>
+                <ul id="desserts" class="list-group mb-4"></ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        async function getDishes(catagory) {
+            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${catagory}`);
+            const data = await response.json();
+            return data.meals;
+        }
+        async function dishAmount(catagory) {
+            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${catagory}`);
+            const data = await response.json();
+            const dishes = data.meals;
+            return dishes.length;
+        }
+        dishAmount("Starter").then(amount => {
+            document.getElementById("apps").innerHTML = "";
+            for (let i = 0; i < amount; i++) {
+                const li = document.createElement("li");
+                li.className = "list-group-item d-flex align-items-center";
+                li.style = "max-width: 350px; padding: 0;";
+                li.innerHTML = `
+                    <img alt="" style="width: 100px; height: 100px; object-fit: cover; border-radius: 5px 0 0 5px;">
+                    <div class="d-flex flex-column justify-content-between ps-3" style="flex: 1;">
+                        <span class="meal-name"></span>
+                        <span class="fw-bold"></span>
+                    </div>
+                `;
+                document.getElementById("apps").appendChild(li);
+            }
+            for (let i = 0; i < amount; i++) {
+                getDishes("Starter").then(dishes => {
+                    const listItem = document.getElementById("apps").children[i];
+                    listItem.querySelector('.meal-name').innerText = dishes[i].strMeal;
+                    listItem.querySelector('img').src = dishes[i].strMealThumb;
+                });
+            }
+        });
+        dishAmount("Side").then(amount => {
+            document.getElementById("sides").innerHTML = "";
+            for (let i = 0; i < 10; i++) {
+                const li = document.createElement("li");
+                li.className = "list-group-item d-flex align-items-center";
+                li.style = "max-width: 350px; padding: 0;";
+                li.innerHTML = `
+                    <img alt="" style="width: 100px; height: 100px; object-fit: cover; border-radius: 5px 0 0 5px;">
+                    <div class="d-flex flex-column justify-content-between ps-3" style="flex: 1;">
+                        <span class="meal-name"></span>
+                        <span class="fw-bold"></span>
+                    </div>
+                `;
+                document.getElementById("sides").appendChild(li);
+            }
+            for (let i = 0; i < 10; i++) {
+                getDishes("Side").then(dishes => {
+                    const listItem = document.getElementById("sides").children[i];
+                    listItem.querySelector('.meal-name').innerText = dishes[i].strMeal;
+                    listItem.querySelector('img').src = dishes[i].strMealThumb;
+                });
+            }
+        });
+        dishAmount("Dessert").then(amount => {
+            document.getElementById("desserts").innerHTML = "";
+            for (let i = 0; i < 13; i++) {
+                const li = document.createElement("li");
+                li.className = "list-group-item d-flex align-items-center";
+                li.style = "max-width: 350px; padding: 0;";
+                li.innerHTML = `
+                    <img alt="" style="width: 100px; height: 100px; object-fit: cover; border-radius: 5px 0 0 5px;">
+                    <div class="d-flex flex-column justify-content-between ps-3" style="flex: 1;">
+                        <span class="meal-name"></span>
+                        <span class="fw-bold"></span>
+                    </div>
+                `;
+                document.getElementById("desserts").appendChild(li);
+            }
+            for (let i = 0; i < 13; i++) {
+                getDishes("Dessert").then(dishes => {
+                    const listItem = document.getElementById("desserts").children[i];
+                    listItem.querySelector('.meal-name').innerText = dishes[i].strMeal;
+                    listItem.querySelector('img').src = dishes[i].strMealThumb;
+                });
+            }
+        });
+        dishAmount("Vegetarian").then(amount => {
+            document.getElementById("vegetarian").innerHTML = "";
+            for (let i = 0; i < 7; i++) {
+                const li = document.createElement("li");
+                li.className = "list-group-item d-flex align-items-center";
+                li.style = "max-width: 350px; padding: 0;";
+                li.innerHTML = `
+                    <img alt="" style="width: 100px; height: 100px; object-fit: cover; border-radius: 5px 0 0 5px;">
+                    <div class="d-flex flex-column justify-content-between ps-3" style="flex: 1;">
+                        <span class="meal-name"></span>
+                        <span class="fw-bold"></span>
+                    </div>
+                `;
+                document.getElementById("vegetarian").appendChild(li);
+            }
+            for (let i = 0; i < 7; i++) {
+                getDishes("Vegetarian").then(dishes => {
+                    const listItem = document.getElementById("vegetarian").children[i];
+                    listItem.querySelector('.meal-name').innerText = dishes[i].strMeal;
+                    listItem.querySelector('img').src = dishes[i].strMealThumb;
+                });
+            }
+        });
+
+    </script>
+
+</html>
