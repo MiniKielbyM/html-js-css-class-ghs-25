@@ -1,0 +1,58 @@
+/* Atlas Restaurant - Main Stylesheet */
+
+/* Carousel Caption Styling (from index.html) */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90%;
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    margin: 0;
+}
+
+/* Carousel image sizing */
+.carousel-inner img {
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* Responsive carousel captions */
+@media (max-width: 576px) {
+    .carousel-caption h5 {
+        font-size: 1.25rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Menu list item styling (from menu.html) */
+.menu-item {
+    max-width: 350px;
+    padding: 0;
+}
+
+.menu-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px 0 0 5px;
+}
+
+.menu-item-content {
+    flex: 1;
+}
+
+/* Reservation card styling (from reservation.html) */
+.reservation-card {
+    max-width: 680px;
+    margin: 0 auto;
+}

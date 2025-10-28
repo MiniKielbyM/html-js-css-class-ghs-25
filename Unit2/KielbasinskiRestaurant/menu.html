@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 
 </head>
 
@@ -58,11 +59,10 @@
             document.getElementById("apps").innerHTML = "";
             for (let i = 0; i < amount; i++) {
                 const li = document.createElement("li");
-                li.className = "list-group-item d-flex align-items-center";
-                li.style = "max-width: 350px; padding: 0;";
+                li.className = "list-group-item d-flex align-items-center menu-item";
                 li.innerHTML = `
-                    <img alt="" style="width: 100px; height: 100px; object-fit: cover; border-radius: 5px 0 0 5px;">
-                    <div class="d-flex flex-column justify-content-between ps-3" style="flex: 1;">
+                    <img alt="">
+                    <div class="d-flex flex-column justify-content-between ps-3 menu-item-content">
                         <span class="meal-name"></span>
                         <span class="fw-bold"></span>
                     </div>
@@ -81,11 +81,10 @@
             document.getElementById("sides").innerHTML = "";
             for (let i = 0; i < 10; i++) {
                 const li = document.createElement("li");
-                li.className = "list-group-item d-flex align-items-center";
-                li.style = "max-width: 350px; padding: 0;";
+                li.className = "list-group-item d-flex align-items-center menu-item";
                 li.innerHTML = `
-                    <img alt="" style="width: 100px; height: 100px; object-fit: cover; border-radius: 5px 0 0 5px;">
-                    <div class="d-flex flex-column justify-content-between ps-3" style="flex: 1;">
+                    <img alt="">
+                    <div class="d-flex flex-column justify-content-between ps-3 menu-item-content">
                         <span class="meal-name"></span>
                         <span class="fw-bold"></span>
                     </div>
@@ -104,11 +103,10 @@
             document.getElementById("desserts").innerHTML = "";
             for (let i = 0; i < 13; i++) {
                 const li = document.createElement("li");
-                li.className = "list-group-item d-flex align-items-center";
-                li.style = "max-width: 350px; padding: 0;";
+                li.className = "list-group-item d-flex align-items-center menu-item";
                 li.innerHTML = `
-                    <img alt="" style="width: 100px; height: 100px; object-fit: cover; border-radius: 5px 0 0 5px;">
-                    <div class="d-flex flex-column justify-content-between ps-3" style="flex: 1;">
+                    <img alt="">
+                    <div class="d-flex flex-column justify-content-between ps-3 menu-item-content">
                         <span class="meal-name"></span>
                         <span class="fw-bold"></span>
                     </div>
@@ -127,11 +125,10 @@
             document.getElementById("vegetarian").innerHTML = "";
             for (let i = 0; i < 7; i++) {
                 const li = document.createElement("li");
-                li.className = "list-group-item d-flex align-items-center";
-                li.style = "max-width: 350px; padding: 0;";
+                li.className = "list-group-item d-flex align-items-center menu-item";
                 li.innerHTML = `
-                    <img alt="" style="width: 100px; height: 100px; object-fit: cover; border-radius: 5px 0 0 5px;">
-                    <div class="d-flex flex-column justify-content-between ps-3" style="flex: 1;">
+                    <img alt="">
+                    <div class="d-flex flex-column justify-content-between ps-3 menu-item-content">
                         <span class="meal-name"></span>
                         <span class="fw-bold"></span>
                     </div>
