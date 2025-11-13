@@ -7,15 +7,15 @@
     <meta name="generator" content="Astro v5.13.2" />
     <meta name="description" content="About Michael Kielbasinski - Software Developer" />
     <title>About Me - Michael Kielbasinski</title>
-    
+
     <script src="../assets/js/color-modes.js"></script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
     <meta name="theme-color" content="#712cf9" />
     <link href="about-me.css" rel="stylesheet" />
 </head>
 
-<body class="d-flex h-100 text-center">
-    <div class="cover-container d-flex w-1000 h-1000 p-3 mx-auto flex-column">
+<body class="d-flex h-150 text-center">
+    <div class="cover-container d-flex w-1000 h-1500 p-3 mx-auto flex-column">
         <header class="mb-auto">
             <div>
                 <nav class="nav nav-masthead justify-content-center float-md-start">
@@ -26,34 +26,87 @@
                 </nav>
             </div>
         </header>
-        
+
         <main class="px-3">
             <h1>About Me</h1>
             <p class="lead">
-                Hello! I'm Michael Kielbasinski, a software developer with a passion for creating innovative solutions.
+                Hello! I'm Michael Kielbasinski, a student at GHS. I have a passion for software development and
+                technology.
+                I enjoy creating web applications and learning new programming languages. In my free time, I like to
+                paint and play video games.
             </p>
-            
+            <p class="lead" id="more">
+            </p>
+            <a class="btn btn-lg btn fw-bold border-white" id="know-more">Would You Like To Know More?</a>
             <div class="text-start mt-4">
-                <h2 class="h4 mb-3">Background</h2>
-                <p>I have a background in computer science and have worked on various projects ranging from web development to mobile applications.</p>
-                
+
+
                 <h2 class="h4 mb-3 mt-4">Skills</h2>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><strong>Programming Languages:</strong> JavaScript, Python, Java</li>
+                    <li class="mb-2"><strong>Programming Languages:</strong> HTML, CSS, JavaScript, Typescript, Python,
+                        Java, C++,
+                        C#, Swift, Go</li>
                     <li class="mb-2"><strong>Frameworks:</strong> React, Node.js, Django</li>
-                    <li class="mb-2"><strong>Tools:</strong> Git, Docker, AWS</li>
+                    <li class="mb-2"><strong>Tools:</strong> Git, Docker, AWS, Unity</li>
                 </ul>
-                
+                <img
+                    src="https://github-readme-stats.hackclub.dev/api/wakatime?username=10405&api_domain=hackatime.hackclub.com&&custom_title=Language Tracker&cache_seconds=0&langs_count=8&theme=noctis_minimus">
+
                 <h2 class="h4 mb-3 mt-4">Contact Me</h2>
                 <p>If you'd like to get in touch, feel free to reach out via my contact page.</p>
             </div>
         </main>
-        
+
         <footer class="mt-auto text-white-50">
             <p>&copy; 2025 Michael Kielbasinski. All rights reserved.</p>
         </footer>
     </div>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const stops = [
+            "#ff7e5f", "#feb47b", "#e06c4f", "#43cea2", "#185a9d",
+            "#ff512f", "#dd2476", "#1e3c72", "#1a2980", "#26d0ce",
+            "#feb47b", "#ff7e5f"
+        ];
+        const duration = 100000; // 100s = animation duration
+
+        function lerp(a, b, t) { return a + (b - a) * t; }
+        function hexToRgb(hex) {
+            const n = parseInt(hex.slice(1), 16);
+            return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+        }
+        function rgbToHex([r, g, b]) {
+            return "#" + [r, g, b].map(x => x.toString(16).padStart(2, "0")).join("");
+        }
+
+        function updateOverlay() {
+            const now = performance.now() % duration;
+            const progress = now / duration * (stops.length - 1);
+            const idx = Math.floor(progress);
+            const t = progress - idx;
+
+            const c1 = hexToRgb(stops[idx]);
+            const c2 = hexToRgb(stops[idx + 1]);
+            const blended = [
+                Math.round(lerp(c1[0], c2[0], t)),
+                Math.round(lerp(c1[1], c2[1], t)),
+                Math.round(lerp(c1[2], c2[2], t))
+            ];
+
+            document.getElementById("know-more").style.setProperty('--averageBg', rgbToHex(blended));
+            requestAnimationFrame(updateOverlay);
+        }
+        updateOverlay();
+        document.getElementById("know-more").addEventListener("click", () => {
+            const moreText = document.getElementById("more");
+            var x = ["I play warhammer 40k as the necrons", "My favorite color is purple", "I have a dog", "My favorite game is HITMAN 3"][Math.floor(Math.random() * 4)];
+            while (x === moreText.innerText) {
+                x = ["I play warhammer 40k as the necrons", "My favorite color is purple", "I have a dog", "My favorite game is HITMAN 3"][Math.floor(Math.random() * 4)];
+            }
+            moreText.innerText = x;
+            
+        });
+    </script>
 </body>
 
 </html>
