@@ -19,10 +19,10 @@
         <header class="mb-auto">
             <div>
                 <nav class="nav nav-masthead justify-content-center float-md-start">
-                    <a class="nav-link fw-bold py-1 px-0" href="../">Home</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="../index.html">Home</a>
                     <a class="nav-link fw-bold py-1 px-0" href="#">Projects</a>
                     <a class="nav-link fw-bold py-1 px-0 active" aria-current="page">About Me</a>
-                    <a class="nav-link fw-bold py-1 px-0" href="../contact/">Contact</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="../contact/index.html">Contact</a>
                 </nav>
             </div>
         </header>
@@ -99,8 +99,9 @@
         updateOverlay();
         document.getElementById("know-more").addEventListener("click", () => {
             const moreText = document.getElementById("more");
+            const y = moreText.innerText;
             var x = ["I play warhammer 40k as the necrons", "My favorite color is purple", "I have a dog", "My favorite game is HITMAN 3"][Math.floor(Math.random() * 4)];
-            while (x === moreText.innerText) {
+            while (x === moreText.innerText || x === y) {
                 x = ["I play warhammer 40k as the necrons", "My favorite color is purple", "I have a dog", "My favorite game is HITMAN 3"][Math.floor(Math.random() * 4)];
             }
             moreText.innerText = x;
