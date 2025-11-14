@@ -21,22 +21,32 @@
     }
 
     @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
+
     #know-more {
       color: white;
       border: 2px solid white;
       transition: background-color 0.3s, color 0.3s;
     }
+
     #know-more:hover {
       background-color: var(--averageBg);
     }
   </style>
 </head>
 
-<body class="d-flex h-100 text-center">
+<body class="d-flex h-1000 text-center">
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
       <div>
@@ -48,14 +58,91 @@
         </nav>
       </div>
     </header>
-    <main class="px-3" style="color: white">
-      <h1>Michael Kielbasinski</h1>
-      <p class="lead">
-        Welcome to my portfolio website! I'm Michael Kielbasinski, a passionate developer and tech enthusiast.
-      </p>
-      <p class="lead">
-        <a href="./about-me/index.html" class="btn btn-lg btn fw-bold border-white" id="know-more">Learn More</a>
-      </p>
+    <main class="px-3" style="color: white; display: flex; justify-content: center; align-items: center;">
+      <table>
+        <tr>
+          <td style="padding: 1rem;">
+            <div class="card border-light" style="width: 18rem; background-color: transparent;">
+              <img class="card-img-top" src="https://placehold.co/286x180" alt="Card image cap" style="height: 180px;">
+              <div class="card-body">
+                <h5 class="card-title">Placeholder</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore exercitationem
+                  quis
+                  praesentium non odit deleniti sapiente hic quasi, tempore ipsam quidem necessitatibus quod impedit
+                  facere
+                  accusantium a quos tenetur delectus.</p>
+              </div>
+            </div>
+          </td>
+          <td style="padding: 1rem;">
+            <div class="card border-light" style="width: 18rem; background-color: transparent;">
+              <img class="card-img-top" src="https://placehold.co/286x180" alt="Card image cap" style="height: 180px;">
+              <div class="card-body">
+                <h5 class="card-title">Placeholder</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore exercitationem
+                  quis
+                  praesentium non odit deleniti sapiente hic quasi, tempore ipsam quidem necessitatibus quod impedit
+                  facere
+                  accusantium a quos tenetur delectus.</p>
+              </div>
+            </div>
+          </td>
+          <td style="padding: 1rem;">
+            <div class="card border-light" style="width: 18rem; background-color: transparent;">
+              <img class="card-img-top" src="https://placehold.co/286x180" alt="Card image cap" style="height: 180px;">
+              <div class="card-body">
+                <h5 class="card-title">Placeholder</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore exercitationem
+                  quis
+                  praesentium non odit deleniti sapiente hic quasi, tempore ipsam quidem necessitatibus quod impedit
+                  facere
+                  accusantium a quos tenetur delectus.</p>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 1rem;">
+            <div class="card border-light" style="width: 18rem; background-color: transparent;">
+              <img class="card-img-top" src="https://placehold.co/286x180" alt="Card image cap" style="height: 180px;">
+              <div class="card-body">
+                <h5 class="card-title">Placeholder</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore exercitationem
+                  quis
+                  praesentium non odit deleniti sapiente hic quasi, tempore ipsam quidem necessitatibus quod impedit
+                  facere
+                  accusantium a quos tenetur delectus.</p>
+              </div>
+            </div>
+          </td>
+          <td style="padding: 1rem;">
+            <div class="card border-light" style="width: 18rem; background-color: transparent;">
+              <img class="card-img-top" src="https://placehold.co/286x180" alt="Card image cap" style="height: 180px;">
+              <div class="card-body">
+                <h5 class="card-title">Placeholder</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore exercitationem
+                  quis
+                  praesentium non odit deleniti sapiente hic quasi, tempore ipsam quidem necessitatibus quod impedit
+                  facere
+                  accusantium a quos tenetur delectus.</p>
+              </div>
+            </div>
+          </td>
+          <td style="padding: 1rem;">
+            <div class="card border-light" style="width: 18rem; background-color: transparent;">
+              <img class="card-img-top" src="https://placehold.co/286x180" alt="Card image cap" style="height: 180px;">
+              <div class="card-body">
+                <h5 class="card-title">Placeholder</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore exercitationem
+                  quis
+                  praesentium non odit deleniti sapiente hic quasi, tempore ipsam quidem necessitatibus quod impedit
+                  facere
+                  accusantium a quos tenetur delectus.</p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
     </main>
     <footer class="mt-auto text-white-50">
       <p>&copy; 2025 Michael Kielbasinski. All rights reserved.</p>
@@ -93,7 +180,7 @@
         Math.round(lerp(c1[2], c2[2], t))
       ];
 
-      document.getElementById("know-more").style.setProperty('--averageBg', rgbToHex(blended));
+
       requestAnimationFrame(updateOverlay);
     }
     updateOverlay();
@@ -101,4 +188,5 @@
 
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
